@@ -1,0 +1,49 @@
+{
+  "name": "api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "build": "nest build",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.14",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.1.14",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/swagger": "^11.2.6",
+    "@nestjs/throttler": "^6.5.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "cookie-parser": "^1.4.7",
+    "helmet": "^8.3.0",
+    "http-proxy-middleware": "^4.2.0",
+    "ioredis": "^5.4.2",
+    "joi": "^18.0.2",
+    "jose": "^5.9.6",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/testing": "^11.1.14",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.5.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  }
+}

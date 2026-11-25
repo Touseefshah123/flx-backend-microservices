@@ -1,0 +1,2 @@
+# Not used. Every service image builds with the REPOSITORY ROOT as its context,
+# so Docker reads /.dockerignore instead of this file. Edit that one.

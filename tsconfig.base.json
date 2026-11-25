@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolvePackageJsonExports": true,
+    "target": "ES2023",
+
+    // Explicit, not auto-discovered. In a workspace the @types packages are
+    // hoisted to the root node_modules, and an editor that has not re-resolved
+    // them reports `Cannot find name 'process'` while tsc on the CLI is clean.
+    "types": ["node", "jest"],
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "strictBindCallApply": false,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "lon-flx-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FLX microservices",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "services/api-gateway"
+  ],
+  "scripts": {
+    "infra:up": "docker compose up -d postgres rabbitmq redis",
+    "infra:down": "docker compose down",
+    "infra:reset": "docker compose down -v && docker compose up -d postgres rabbitmq redis",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky || true && git config commit.template .gitmessage || true"
+  },
+  "lint-staged": {
+    "*.{ts,mjs,js}": "prettier --write",
+    "*.{json,md,yml,yaml}": "prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/node": "^26.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}

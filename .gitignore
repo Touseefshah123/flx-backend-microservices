@@ -1,0 +1,65 @@
+# compiled output
+# Unanchored on purpose: in a workspaces monorepo every services/*/dist and
+# services/*/node_modules must be ignored too, not just the ones at the root.
+dist/
+build/
+node_modules/
+*.tsbuildinfo
+
+# Secrets — identity-service generates its RS256 pair into ./keys via
+# `npm run keys:generate`. The private key must never reach the repo.
+keys/
+*.pem
+!**/*.example.pem
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+coverage/
+.nyc_output/
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files — .env.example is committed, .env is not
+.env
+.env.*
+!.env.example
+
+# temp directory
+.temp/
+.tmp/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# bouncer
+infra/pgbouncer/userlist.txt
